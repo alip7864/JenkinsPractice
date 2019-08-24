@@ -1,0 +1,52 @@
+pipeline {
+	agent any 
+		stages {
+			stage('Git_Checkout'){
+				steps{
+					git 'https://github.com/alip7864/JenkinsPractice.git'
+				}
+			}
+			
+			stage('Build'){
+				steps{
+					bat label: '', script: 'Build.bat'
+				}
+			}
+			
+			stage('Unit test'){
+				steps{
+					bat label: '', script: 'Junit.bat'
+				}
+			}
+			stage('Quality test'){
+				steps{
+					bat label: '', script: 'Qualiy.bat'
+				}
+			}
+			stage('Deploy'){
+				steps{
+					bat label: '', script: 'Deploy.bat'
+				}
+			}
+			
+		}
+		post{
+			always {
+				echo "This will run always";
+		
+			}
+			success {
+				echo 'this will run only if successfull';
+			}
+			failure {
+				echo 'This will run only if failure';
+			}
+			unstable {
+				echo 'This will run only if run is marked as unstable';
+			}
+			changed {
+				echo 'This will run only if the state of the pipeline has changed';
+			}
+		}
+	
+}
