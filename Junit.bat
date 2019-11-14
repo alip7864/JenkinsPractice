@@ -1,1 +1,1 @@
-echo ""[DJ[2~"[Dunit is compelted successfully at : %date% : %time%"
+echo "Dunit is compelted successfully at : %date% : %time%"
