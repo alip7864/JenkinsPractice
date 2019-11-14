@@ -1,1 +1,1 @@
-echo "Sonar Cube Qualit test is completed at : %date% : %time%;[D";
+echo "Sonar Cube Qualit test is completed at : %date% : %time%";
