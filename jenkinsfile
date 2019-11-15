@@ -11,23 +11,23 @@ pipeline {
 
 			stage('Build'){
 				steps{
-					bat label: '', script: 'Build.bat'
+					bat label: '', script: 'Build_f.bat'
 				}
 			}
 			
 			stage('Unit test'){
 				steps{
-					bat label: '', script: 'Junit.bat'
+					bat label: '', script: 'Junit_f.bat'
 				}
 			}
 			stage('Quality test'){
 				steps{
-					bat label: '', script: 'Qualiy.bat'
+					bat label: '', script: 'Qualiy_f.bat'
 				}
 			}
 			stage('Deploy'){
 				steps{
-					bat label: '', script: 'Deploy.bat'
+					bat label: '', script: 'Deploy_f.bat'
 				}
 			}
 			
